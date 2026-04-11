@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumina Gallery | Premium Image Showcase</title>
+    <meta name="description" content="A premium, responsive image gallery with lightbox, dark mode, and smooth transitions.">
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body data-theme="light">
+
+    <header>
+        <div class="header-top">
+            <h1>Lumina</h1>
+            <div class="controls">
+                <div class="search-box">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" id="searchInput" placeholder="Search gallery...">
+                </div>
+                <button id="shuffleBtn" class="btn-icon" title="Shuffle Images">
+                    <i class="fas fa-random"></i>
+                </button>
+                <button id="themeToggle" class="btn-icon" title="Toggle Dark Mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </div>
+
+        <nav class="filters">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="nature">Nature</button>
+            <button class="filter-btn" data-filter="architecture">Architecture</button>
+            <button class="filter-btn" data-filter="abstract">Abstract</button>
+            <button class="filter-btn" data-filter="minimal">Minimal</button>
+        </nav>
+    </header>
+
+    <main class="gallery-container">
+        <div id="galleryGrid" class="gallery-grid">
+            <!-- Images will be injected by JavaScript -->
+        </div>
+    </main>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+        <button class="lightbox-close"><i class="fas fa-times"></i></button>
+        <button class="lightbox-nav lightbox-prev"><i class="fas fa-chevron-left"></i></button>
+        <button class="lightbox-nav lightbox-next"><i class="fas fa-chevron-right"></i></button>
+        
+        <div class="lightbox-content">
+            <img src="" alt="" class="lightbox-img">
+            <div class="lightbox-details">
+                <span class="lightbox-counter">1 / 20</span>
+                <div class="lightbox-actions">
+                    <button class="lightbox-btn" id="filterBtn">
+                        <i class="fas fa-magic"></i> Filter
+                    </button>
+                    <button class="lightbox-btn" id="downloadBtn">
+                        <i class="fas fa-download"></i> Download
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
