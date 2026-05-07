@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Zero-G Anti-Gravity Calculator — a sci-fi arithmetic calculator with weightless physics and deep-space aesthetics." />
+  <title>Zero‑G Calculator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Ambient star-dust canvas -->
+  <canvas id="stardust" aria-hidden="true"></canvas>
+
+  <!-- Top Controls -->
+  <div class="top-controls">
+    <!-- Theme toggle -->
+    <div class="gravity-toggle" role="switch" aria-checked="false" aria-label="Theme toggle" tabindex="0" id="themeToggle">
+      <div class="toggle-track">
+        <div class="toggle-thumb"></div>
+      </div>
+      <span class="toggle-label">
+        <span class="toggle-icon" id="themeIcon">☀️</span>
+        <span id="themeLabel">DARK</span>
+      </span>
+    </div>
+
+    <!-- Gravity toggle -->
+    <div class="gravity-toggle" role="switch" aria-checked="false" aria-label="Gravity toggle" tabindex="0" id="gravityToggle">
+      <div class="toggle-track">
+        <div class="toggle-thumb"></div>
+      </div>
+      <span class="toggle-label">
+        <span class="toggle-icon">🪐</span>
+        <span id="gravityLabel">ZERO-G</span>
+      </span>
+    </div>
+  </div>
+
+  <!-- Usage hint -->
+  <div class="usage-hint" id="usageHint">
+    <span class="hint-icon">⌨</span>
+    <span>Keyboard ready — type to calculate</span>
+    <button class="hint-close" aria-label="Close hint" id="closeHint">&times;</button>
+  </div>
+
+  <!-- Calculator shell -->
+  <div class="calc-shell" id="calcShell">
+    <!-- Glow rings -->
+    <div class="glow-ring glow-ring--1" aria-hidden="true"></div>
+    <div class="glow-ring glow-ring--2" aria-hidden="true"></div>
+
+    <div class="calc-inner">
+      <!-- Display -->
+      <div class="display-panel" id="displayPanel">
+        <div class="display-expression" id="expression" aria-live="polite" aria-label="Expression"></div>
+        <div class="display-value" id="displayValue" aria-live="assertive" aria-label="Current value">0</div>
+      </div>
+
+      <!-- Floating values container -->
+      <div class="float-container" id="floatContainer" aria-hidden="true"></div>
+
+      <!-- Button grid -->
+      <div class="btn-grid" id="btnGrid">
+        <button class="btn btn--func"   data-action="ac"    aria-label="All Clear">AC</button>
+        <button class="btn btn--func"   data-action="c"     aria-label="Clear Entry">C</button>
+        <button class="btn btn--func"   data-action="backspace" aria-label="Backspace">⌫</button>
+        <button class="btn btn--op"     data-action="op" data-value="÷" aria-label="Divide">÷</button>
+
+        <button class="btn btn--num"    data-action="digit" data-value="7" aria-label="7">7</button>
+        <button class="btn btn--num"    data-action="digit" data-value="8" aria-label="8">8</button>
+        <button class="btn btn--num"    data-action="digit" data-value="9" aria-label="9">9</button>
+        <button class="btn btn--op"     data-action="op" data-value="×" aria-label="Multiply">×</button>
+
+        <button class="btn btn--num"    data-action="digit" data-value="4" aria-label="4">4</button>
+        <button class="btn btn--num"    data-action="digit" data-value="5" aria-label="5">5</button>
+        <button class="btn btn--num"    data-action="digit" data-value="6" aria-label="6">6</button>
+        <button class="btn btn--op"     data-action="op" data-value="−" aria-label="Subtract">−</button>
+
+        <button class="btn btn--num"    data-action="digit" data-value="1" aria-label="1">1</button>
+        <button class="btn btn--num"    data-action="digit" data-value="2" aria-label="2">2</button>
+        <button class="btn btn--num"    data-action="digit" data-value="3" aria-label="3">3</button>
+        <button class="btn btn--op"     data-action="op" data-value="+" aria-label="Add">+</button>
+
+        <button class="btn btn--num btn--sign" data-action="sign" aria-label="Toggle sign">±</button>
+        <button class="btn btn--num"    data-action="digit" data-value="0" aria-label="0">0</button>
+        <button class="btn btn--num"    data-action="decimal" aria-label="Decimal point">.</button>
+        <button class="btn btn--equals" data-action="equals" aria-label="Equals">=</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
